@@ -31,5 +31,8 @@ create_article( 'Apple has secret facility in Taiwan',
                 ['mobile', 'taiwan', 'apple'])
 
 # Find articles by a word_tag
-found = Tag.find_by_word('s')
+found = Tag.find_by_word('mobile')
+found.articles.each { |article| puts article.title } if found
+
+found = Tag.find_by_word('asdf')
 found.articles.each { |article| puts article.title } if found
