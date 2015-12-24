@@ -14,9 +14,10 @@ def create_article(title_s, tags_a)
   article = Article.new(title: title_s).save
 
   tags_a.each do |t|
-    word_tag = Tag.where(word: t).first
+    tag_word = t.downcase
+    word_tag = Tag.where(word: tag_word).first
     unless word_tag
-      word_tag = Tag.new(word: t).save
+      word_tag = Tag.new(word: tag_word).save
     end
 
     article.tags << word_tag
