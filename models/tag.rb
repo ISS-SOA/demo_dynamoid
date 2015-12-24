@@ -1,7 +1,9 @@
+require 'dynamoid'
+
 class Tag
   include Dynamoid::Document
 
-  field :word
+  field :word, :string
 
   has_and_belongs_to_many :articles
 

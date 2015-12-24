@@ -1,3 +1,5 @@
+require 'dynamoid'
+
 class Article
   include Dynamoid::Document
   field :title, :string
